@@ -1,11 +1,11 @@
 metadata:
     format: Lava-Test Test Definition 1.0
     name: singlenode-basic-level
-    description: "Basic (level 1) single node test commands for Linux Linaro ubuntu Images"
+    description: "Basic (level 1) single node test commands for Linux Linaro debian Images"
     maintainer:
-        - neil.williams@linaro.org
+        - kkbomb@realtek.com
     os:
-        - ubuntu
+        - debian
     scope:
         - functional
     devices:
@@ -24,7 +24,7 @@ run:
         - lava-test-case linux-linaro-ubuntu-route-ifconfig-up-lo --shell ifconfig lo up
         - lava-test-case linux-linaro-ubuntu-route-dump-b --shell route
         - lava-test-case linux-linaro-ubuntu-route-ifconfig-up --shell ifconfig eth0 up
-        - lava-test-case ping-test --shell ping -c10 172.21.70.110
+        - lava-test-case ping-test --shell ping -c10 localhost
 
 parse:
     pattern: "(?P<test_case_id>.*-*):\\s+(?P<result>(pass|fail))"
