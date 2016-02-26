@@ -14,8 +14,8 @@ metadata:
 run:
     steps:
         - lava-test-case linux-linaro-debain-ls --shell ls
-        - lava-test-case realpath-get-IP --shell realpath ./lava-test/multinode_get_ip.sh
-        - lava-test-case realpath-get-IP --shell realpath ./multinode_get_ip.sh
+        - lava-test-case realpath-get-IP --shell ./multinode_check_ip.sh
+        - lava-test-case realpath-get-IP --shell multinode_get_ip.sh
         - lava-test-case realpath-get-IP --shell  './multinode_get_ip.sh'
 
 parse:
