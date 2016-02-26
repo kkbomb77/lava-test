@@ -15,8 +15,7 @@ run:
     steps:
         - lava-test-case linux-linaro-debain-ls --shell ls
         - lava-test-case realpath-get-IP --shell ./multinode_check_ip.sh
-        - lava-test-case realpath-get-IP --shell multinode_get_ip.sh
-        - lava-test-case realpath-get-IP --shell  './multinode_get_ip.sh'
+        - lava-test-case realpath-get-IP --shell ifconfig|grep "inet addr"|grep -v "127.0.0.1"|cut -d: -f2|cut -d' ' -f1
 
 parse:
     pattern: "(?P<test_case_id>.*-*):\\s+(?P<result>(pass|fail))"
