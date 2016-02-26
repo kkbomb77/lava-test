@@ -10,15 +10,14 @@ metadata:
         - functional
     devices:
         - kvm
-        - arndale
-        - panda
-        - beaglebone-black
-        - beagle-xm
 
 run:
     steps:
-        - echo "test1:" "pass"
-        - lava-test-case linux-linaro-ubuntu-route-ifconfig-up-lo --shell ifconfig 
+        - lava-test-case linux-linaro-debian-ifconfig-up-show --shell ifconfig 
+        - lava-test-case linux-linaro-debian-ifconfig-up-show --shell ifconfig 
+        - lava-test-case linux-linaro-debian-ifconfig-up-show --shell ifconfig 
+        - lava-test-case linux-linaro-debian-ifconfig-up-show --shell ifconfig 
+        - lava-test-case linux-linaro-debian-ifconfig-up-show --shell ifconfig 
         - lava-test-case ping-test --shell ping -c10 172.21.72.213
 
 parse:
