@@ -13,13 +13,10 @@ metadata:
 
 run:
     steps:
-        - lava-test-case linux-linaro-debain-ls --shell ls-al
-        - lava-test-case linux-linaro-debain-? --shell ?
-        - lava-test-case linux-linaro-debain-help --shell -h
+        - lava-test-case linux-linaro-debain-ls --shell ls
         - lava-test-case realpath-get-IP --shell realpath ./lava-test/multinode_get_ip.sh
         - lava-test-case realpath-get-IP --shell realpath ./multinode_get_ip.sh
-        - 'sudo ./lava-test/multinode_get_ip.sh'
-        - lava-test-case realpath-get-IP --shell  'sudo ./multinode_get_ip.sh'
+        - lava-test-case realpath-get-IP --shell  './multinode_get_ip.sh'
 
 parse:
     pattern: "(?P<test_case_id>.*-*):\\s+(?P<result>(pass|fail))"
