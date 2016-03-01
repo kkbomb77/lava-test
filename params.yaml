@@ -37,10 +37,19 @@ run:
         - echo $VARIABLE_NAME_2
         - echo $SPACED_VAR
         - echo $PUB_KEY
-        - lava-test-case realpath-cpuinfo --shell realpath ./linux-cpuinfo.sh
-        - lava-test-case realpath-result-params --shell realpath ./result-params.py
+        
+        - ./linux-cpuinfo.sh
+        - ./result-params.py
+        - sudo  ./linux-cpuinfo.sh
+        - sudo  ./result-params.py
         - realpath ./linux-cpuinfo.sh
         - realpath ./result-params.py
+        - realpath './linux-cpuinfo.sh'
+        - realpath './result-params.py'
+        - realpath sudo ./linux-cpuinfo.sh
+        - realpath sudo ./result-params.py
+        - lava-test-case realpath-cpuinfo --shell realpath ./linux-cpuinfo.sh
+        - lava-test-case realpath-result-params --shell realpath ./result-params.py
 
 parse:
     pattern: "(?P<test_case_id>.*-*):\\s+(?P<result>(pass|fail))"
