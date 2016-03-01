@@ -1,15 +1,15 @@
 metadata:
     format: Lava-Test Test Definition 1.0
     name: smoke-tests-basic
-    description Basic system test command for Linaro Ubuntu images. The test runs basic commands
+    description: Basic system test command for Linaro Ubuntu images. The test runs basic commands
                   like pwd, uname, vmstat, ifconfig, lscpu, lsusb and lsb_release.
-    maintainer
+    maintainer:
         - milosz.wasilewski@linaro.org
-    os
+    os:
         - ubuntu
-    scope
+    scope:
         - functional
-    devices
+    devices:
         - panda
         - panda-es
         - arndale
@@ -17,8 +17,8 @@ metadata:
         - vexpress-tc2
         - juno
 
-run
-    steps
+run:
+    steps:
         - lava-test-case linux-linaro-ubuntu-pwd --shell pwd
         - lava-test-case linux-linaro-ubuntu-uname --shell uname -a
         - lava-test-case linux-linaro-ubuntu-vmstat --shell vmstat
