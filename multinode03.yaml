@@ -26,33 +26,19 @@ install:
 
 run:
     steps:
-        - lava-test-case multinode-role-output --shell lava-role
-        - lava-test-case multinode-sync --shell lava-sync running
-        - lava-test-case multinode-send-message --shell lava-send sending source=$(lava-self) role=$(lava-role) hostname=$(hostname -f) kernver=$(uname -r) kernhost=$(uname -n)
-        - lava-test-case multinode-group --shell lava-group
-        - lava-test-case multinode-group-role --shell lava-group $(lava-role)
+        - lava-test-case linux-linaro-ubuntu-list --shell ls
+        - lava-test-case linux-linaro-ubuntu-pwd --shell pwd
         - lava-test-case linux-linaro-ubuntu-netstat --shell netstat -an
         - lava-test-case linux-linaro-ubuntu-ifconfig-dump --shell ifconfig -a
         - lava-test-case linux-linaro-ubuntu-route-dump-a --shell route
         - lava-test-case linux-linaro-ubuntu-route-ifconfig-up-lo --shell ifconfig lo up
         - lava-test-case linux-linaro-ubuntu-route-dump-b --shell route
         - lava-test-case linux-linaro-ubuntu-route-ifconfig-up --shell ifconfig eth0 up
-        - lava-test-case multinode-wait --shell lava-wait-all sending
-        - lava-test-case multinode-network --shell lava-network broadcast eth0
-        - lava-test-case multinode-get-network --shell lava-network collect eth0
-        - lava-test-case realpath-check --shell realpath ./multinode/check_ip.sh
-        - lava-test-case multinode-lava-network-ipv4 --shell ./multinode/check_ip.sh
-        - lava-test-case multinode-lava-network2-ipv4 --shell ./multinode/check_ip.pl
-        - lava-test-case multinode-broadcast-ipv4 --shell lava-network query $(lava-self) ipv4
-        - lava-test-case multinode-broadcast-ipv6 --shell lava-network query $(lava-self) ipv6
-        - lava-test-case multinode-broadcast-netmask --shell lava-network query $(lava-self) netmask
-        - lava-test-case multinode-broadcast-gateway --shell lava-network query $(lava-self) default-gateway
-        - lava-test-case multinode-broadcast-hostname --shell lava-network query $(lava-self) hostname
-        - lava-test-case multinode-broadcast-fqdn --shell lava-network query $(lava-self) hostname-full
-        - lava-test-case multinode-broadcast-dns1 --shell lava-network query $(lava-self) dns_1
-        - lava-test-case multinode-broadcast-dns2 --shell lava-network query $(lava-self) dns_2
-        - lava-test-case multinode-broadcast-dns3 --shell lava-network query $(lava-self) dns_3
-        - lava-test-case multinode-broadcast-mac --shell lava-network query $(lava-self) mac
+        
+        - lava-test-case realpath-check --shell realpath ./check_ip.sh
+        - lava-test-case multinode-lava-network-ipv4 --shell ./check_ip.sh
+        - lava-test-case multinode-lava-network2-ipv4 --shell ./check_ip.pl
+        
         - cat /tmp/lava_multi_node_network_cache.txt
         - lava-test-case network-cache --shell lava-network hosts /tmp/testfile
         - cat /tmp/testfile
