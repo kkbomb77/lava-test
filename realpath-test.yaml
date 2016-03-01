@@ -24,10 +24,18 @@ install:
         - tftp-server
 run:
     steps:
-        -   ls -al
+        -   ls  -al
+        -   touch testFile
+        -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   tftp -p -r get_ip.sh 172.21.70.110 
+        -   tftp 172.21.70.110 
+        -   verbose
+        -   trace
+        -   status
+        -   put testFile
+        -   quit
+        
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
