@@ -17,8 +17,9 @@ params:
 
 run:
     steps:
-        - sudo  ./linux-cpuinfo.sh
-        - sudo  ./result-params.py
+        - ls
+        - ./linux-cpuinfo.sh
+        - ./result-params.py
         - realpath ./linux-cpuinfo.sh
         - realpath ./result-params.py
         - realpath './linux-cpuinfo.sh'
