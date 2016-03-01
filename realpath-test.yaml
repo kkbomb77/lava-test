@@ -15,6 +15,13 @@ params:
     VARIABLE_NAME_1: value_1
     VARIABLE_NAME_2: value_2
 
+
+install:
+    deps:
+        - ping
+        - realpath
+        - tftp
+        - tftp-server
 run:
     steps:
         -   ls -al
