@@ -18,10 +18,12 @@ params:
 
 install:
     deps:
-        - iputils-ping
-        - realpath
-        - tftp
-        - tftp-server
+        -   iputils-ping
+        -   realpath
+        -   tftp
+        -   tftp-server
+        -   tftp-hpa 
+        -   tftpd-hpa
 run:
     steps:
         -   ls  -al
