@@ -18,7 +18,7 @@ params:
 
 install:
     deps:
-        - ping
+        - iputils-ping
         - realpath
         - tftp
         - tftp-server
@@ -27,6 +27,7 @@ run:
         -   ls -al
         -   ifconfig
         -   ping -c3    127.0.0.1
+        -   ping -c3    172.21.70.110
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
