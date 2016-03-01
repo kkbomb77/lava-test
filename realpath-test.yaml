@@ -17,16 +17,19 @@ params:
 
 run:
     steps:
-        -   ls
         -   ls -al
+        -   ifconfig
+        -   ping -c3    127.0.0.1
         
+        - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
+        - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
         - lava-test-case realpath-cpuinfo --shell realpath ./linux-cpuinfo.sh
         - lava-test-case realpath-result-params --shell realpath ./result-params.py
         
-        - realpath ./linux-cpuinfo.sh
-        - realpath ./result-params.py
-        - realpath './linux-cpuinfo.sh'
-        - realpath './result-params.py'
+        - ./linux-cpuinfo.sh
+        - ./result-params.py
+        - './linux-cpuinfo.sh'
+        - './result-params.py'
 
 
 parse:
