@@ -38,8 +38,6 @@ run:
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
         
-        - lava-test-case network-cache --shell lava-network hosts /tmp/testfile
-        - lava-test-case network-alias-cache --shell lava-network alias-hosts /tmp/testfile-alias
         - lava-test-case ntpdate-check --shell ntpdate-debian
         - lava-test-case curl-http --shell curl -o img.tar.gz http://images.validation.linaro.org/lava-masters/dynamic/cubietruck/cbtruck_img.tar.gz
         - lava-test-case tar-tgz --shell tar -tzf img.tar.gz
