@@ -31,7 +31,7 @@ run:
         -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   tftp 172.21.70.110 
+        -   tftp 127.0.0.1
         -   verbose
         -   trace
         -   status
