@@ -30,7 +30,8 @@ run:
         -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   man tftp
+        -   tftp
+        -   quit
     
     
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
