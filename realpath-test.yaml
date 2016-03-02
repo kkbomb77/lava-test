@@ -29,10 +29,10 @@ run:
         -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   tftp
-        -   quit
+        -   man tftp
     
-    
+        - lava-test-case tftp-test --shell tftp localhost
+        - lava-test-case tftp-test --shell quit
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
         - lava-test-case realpath-cpuinfo --shell realpath ./linux-cpuinfo.sh
