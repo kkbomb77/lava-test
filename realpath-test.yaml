@@ -3,9 +3,9 @@ metadata:
     name: realpath-test
     description: "test commands for Linux Linaro ubuntu Images with realpath"
     maintainer:
-        - neil.williams@linaro.org
+        - kkbomb@realtek.com
     os:
-        - ubuntu
+        - debian
     scope:
         - functional
     devices:
@@ -30,11 +30,10 @@ run:
         -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   tftp 127.0.0.1
+        -   tftp 
         -   verbose
         -   trace
         -   status
-        -   put testFile
         -   quit
         
         
