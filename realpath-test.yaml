@@ -22,7 +22,6 @@ install:
         -   realpath
         -   tftp
         -   tftp-server
-        -   tftp-hpa 
         -   tftpd-hpa
 run:
     steps:
