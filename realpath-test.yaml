@@ -21,7 +21,6 @@ install:
         -   iputils-ping
         -   realpath
         -   tftp
-        -   tftp-server
         -   tftpd-hpa
 run:
     steps:
