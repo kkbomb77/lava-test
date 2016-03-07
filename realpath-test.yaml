@@ -18,12 +18,12 @@ params:
 install:
     deps:
         -   tftp
-        -   tftp-hpa
 
 run:
     steps:
         -   ls  -al
         -   ifconfig
+        -   man tftp
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
 
