@@ -29,7 +29,7 @@ run:
         -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   ./multinode_check_ip.sh
+        -   sudo ./multinode_check_ip.sh
         -   ./multinode_get_ip.sh
         
         - lava-test-case tftp-test --shell quit
