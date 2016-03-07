@@ -28,15 +28,15 @@ run:
         -   touch testFile
         -   ls  -al
         -   ifconfig
+        -   uname -a
+        -   lsb_release -a
         -   ping -c3    127.0.0.1
-        -   sudo ./multinode_check_ip.sh
-        -   ./multinode_get_ip.sh
-        
-        - lava-test-case tftp-test --shell quit
+
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
         - lava-test-case realpath-cpuinfo --shell realpath ./linux-cpuinfo.sh
         - lava-test-case realpath-result-params --shell realpath ./result-params.py
+        
         
 
 
