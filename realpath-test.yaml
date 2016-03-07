@@ -25,13 +25,7 @@ install:
 run:
     steps:
         -   ls  -al
-        -   touch testFile
-        -   ls  -al
-        -   ifconfig
-        -   uname -a
-        -   lsb_release -a
-        -   ping -c3    127.0.0.1
-
+        
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
         - lava-test-case realpath-cpuinfo --shell realpath ./linux-cpuinfo.sh
