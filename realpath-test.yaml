@@ -29,8 +29,8 @@ run:
         -   ls  -al
         -   ifconfig
         -   ping -c3    127.0.0.1
-        -   man tftp
-        -   ./check_ip.sh
+        -   ./multinode_check_ip.sh
+        -   ./multinode_get_ip.sh
         
         - lava-test-case tftp-test --shell quit
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
