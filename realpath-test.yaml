@@ -23,8 +23,7 @@ run:
     steps:
         -   ls  -al
         -   ifconfig
-        -   tftp 192.168.1.6
-        -   quit
+        -   telnet 172.21.70.110
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
 
