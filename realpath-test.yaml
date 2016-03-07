@@ -18,6 +18,7 @@ params:
 run:
     steps:
         -   ls  -al
+        -   ifconfig
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
         - lava-test-case realpath-get-ip --shell realpath ./get_ip.sh
