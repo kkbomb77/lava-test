@@ -27,7 +27,6 @@ run:
         -   ls  -al
         -   touch testFile
         -   ls  -al
-        -   ifconfig
         -   uname -a
         -   lsb_release -a
         -   ping -c3    127.0.0.1
