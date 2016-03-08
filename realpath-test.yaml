@@ -23,7 +23,6 @@ run:
     steps:
         -   ls  -al
         -   ifconfig
-        -   lava connect test01
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
 
