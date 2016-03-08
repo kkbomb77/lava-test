@@ -23,8 +23,7 @@ run:
     steps:
         -   ls  -al
         -   ifconfig
-        -   tftp 192.168.1.6
-        -   quit
+        -   lava connect test01
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
 
