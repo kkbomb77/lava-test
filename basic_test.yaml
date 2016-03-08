@@ -23,6 +23,7 @@ run:
     steps:
         -   ls  -al
         -   ifconfig
+        -   ping 192.168.1.253
         
         - lava-test-case realpath-check-ip --shell realpath ./check_ip.sh
 
