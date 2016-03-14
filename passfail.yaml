@@ -1,0 +1,19 @@
+metadata:
+  name: passfail
+  format: "Lava-Test-Shell Test Definition 1.0"
+  version: "1.0"
+  description: "A simple passfail test for demo."
+  os:
+    - debian
+    - ubuntu
+    - openembedded
+  devices:
+    - origen
+    - panda
+  environment:
+    - lava-test-shell
+
+run:
+  steps:
+    - "lava-test-case fail-test --result pass"
+    - "lava-test-case pass-test --result pass"
