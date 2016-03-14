@@ -23,6 +23,7 @@ run:
     steps:
         -   ls  -al
         -   ifconfig
+        -   ifup eth0
         -   ping -c 4 172.21.70.110
         -   ping -c 4 192.168.1.253
         
